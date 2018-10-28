@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .largeWidth{
+            color: red;
+        }
+        .smallWidth{
+            color: blue;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"> <span class="glyphicon glyphicon-log-in"></span> Login</a>
+        </div>
+        <div class="navbar-header" ng-hide="IsVisible">
+            <a class="navbar-brand" href="#!emp"> <span class="glyphicon glyphicon-th-list"></span> Employees List</a>
+        </div>
+        <div class="navbar-header" ng-hide="IsVisible">
+            <a class="navbar-brand" href="#!add"> <span class="glyphicon glyphicon-user"></span> Add new Employee</a>
+        </div>
+    </div>
+</nav>
+    <div class="container" >
+        <h2>Employee List
+            <br/>
+            <button type="button" ng-click="add()" class="btn btn-primary" role="button"> ADD EMPLOYEE</button>
+        </h2>
+        <br/>
+        <div class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div>
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" ng-model="enteredValue">
+            </div>
+        </div>
+        <span></span>
+        <table class="table" ng-table="vm.tableParams">
+            <thead>
+                <tr class="active">
+                    <th>Employee ID</th>
+                    <th>Gender
+                        <a href="" ng-click="order('firstname', false)">
+                            <i class="fa fa-sort"></i>
+                        </a>
+                    </th>
+                    <th>First Name
+                        <a href="" ng-click="order('firstname', false)">
+                            <i class="fa fa-sort"></i>
+                        </a>
+                    </th>
+                    <th>Last Name
+                        <a href="" ng-click="order('firstname', false)">
+                            <i class="fa fa-sort"></i>
+                        </a>
+                    </th>
+                    <th>Email
+                        <a href="" ng-click="order('firstname', false)">
+                            <i class="fa fa-sort"></i>
+                        </a>
+                    </th>
+                    <th>City
+                        <a href="" ng-click="order('firstname', false)">
+                            <i class="fa fa-sort"></i>
+                        </a>
+                    </th>
+                    <th>Age
+                        <a href="" ng-click="order('firstname', false)">
+                            <i class="fa fa-sort"></i>
+                        </a>
+                    </th>
+                    <th>Edit/Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="result in Records | filter : enteredValue"
+                    ng-class="{largeWidth: result.gender == 'M', smallWidth: result.gender == 'F'}" >
+                    <td>{{result.id}}</td>
+                    <td>{{result.gender}}</td>
+                    <td>{{result.firstname}}</td>
+                    <td>{{result.lastname}}</td>
+                    <td>{{result.email}}</td>
+                    <td>{{result.city}}</td>
+                    <td>{{result.age}}</td>
+                    <td><button type="button" ng-click="editInput($index)" class="btn btn-success"><span class="glyphicon glyphicon-pencil"></span> Edit</button>
+                        <button type="button" ng-click="removeInput($index)" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

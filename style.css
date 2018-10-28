@@ -1,0 +1,103 @@
+.navbar
+{
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+
+}
+.navbar a {
+    float: left;
+    text-align: center;
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+}
+.navbar a:hover {
+    background-color: #000;
+}
+body{
+    font-family: 'Open Sans Condensed','Arial Narrow', serif;
+    background: #ddd repeat top left;
+    font-weight: 400;
+    font-size: 15px;
+    color: #333;
+}
+#table1
+{
+    min-width: 100%;
+    padding: 20px;
+    margin: 10px;
+    font-size: large;
+    font-family: "Times New Roman", Times, serif;
+    border: 1px solid black;
+}
+tr,td,th{
+    border: 1px solid black;
+    height: 50px;
+    padding: 10px;
+}
+tr:nth-child(even)
+{
+    background-color: whitesmoke;
+}
+#button1{
+    margin: 20px 0px 20px 50px;
+    background: orange;
+    height: 50px;
+    min-width: 100px;
+}
+button:hover
+{
+    border: 3px solid grey;
+}
+form
+{
+    position: relative;
+    margin-left: 150px;
+    margin-right: 150px;
+    padding: 20px;
+    margin-top: 60px;
+    background-color: whitesmoke;
+    border: 10px solid grey;
+    line-height: 40px;
+    font-size: x-large;
+}
+form input,select
+{
+    background-color: grey;
+    color: white;
+    border: 2px solid orange;
+    box-shadow: orange;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 50px;
+}
+img
+{
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid grey;
+    border-radius: 50%;
+    width: 30%;
+}
+.logo{
+    background: url("logo.jpg") no-repeat left;
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+}
+.des{
+    font-style: normal;
+    font-size: 40px;
+    color: #28739E;
+}
+.header{
+    display: flex;
+    flex-flow: row;
+    margin: 30px;
+    padding: 20px;
+    background-color: #B0CFE0;
+}
